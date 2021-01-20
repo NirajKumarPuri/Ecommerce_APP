@@ -1,0 +1,17 @@
+.container{
+    width: 100%;
+    overflow-x: hidden;
+    margin: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+.content{
+    width: 20%;
+}
+@media(min-width:1024px){
+    .content{
+        width: 12%;
+        margin-left: 20px;
+    }
+}

@@ -1,0 +1,92 @@
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.imgbox{
+    width: 24%;
+    margin-top: 20px;
+}
+.img{
+    width: 100%;
+}
+.content{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.parabox1{
+    width: 100%;
+}
+.para1{
+    margin: 0;
+}
+.parabox2{
+    width: 100%;
+
+}
+.para2{
+    margin: 0;
+    font-weight: 600;
+    color: green;
+}
+.parabox3{
+    width: 100%;
+}
+.para3{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+.buttonbox{
+    width: 96%;
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+}
+.addbox{
+    width: 48%;
+}
+.add{
+    width: 100%;
+    border: none;
+    color: white;
+    font-size: 32px;
+    background-color:#ff9f00;
+}
+.buybox{
+    width: 40%;
+    text-align: center;
+    background-color: chocolate;
+
+}
+.buy{
+    border: none;
+    color: white;
+    font-size: 32px;
+    text-decoration: none;
+    
+}
+@media(min-width:768px){
+.content{
+    width: 50%;
+    margin: 20px 10px;
+}
+.para1{
+    font-size: 20px;
+}
+.para2{
+    margin: 20px 0px;
+}
+}
+@media(min-width:1024px){
+    .imgbox{
+        width: 24%;
+        height: 400px;
+    }
+    .img{
+        height: 100%;
+    }
+}
