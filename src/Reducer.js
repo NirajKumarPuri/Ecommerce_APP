@@ -1,6 +1,7 @@
-import { GET_IMAGE_SUCCESS, DELETE_ITEM} from "./Action";
+import { GET_IMAGE_SUCCESS, DELETE_ITEM,DATA_ITEM} from "./Action";
 let initialstate={
-    imgurl:[]
+    imgurl:[],
+    Data:'',
 }
 const Itemreducer=(state=initialstate,action)=>{
     switch(action.type){
@@ -14,6 +15,10 @@ const Itemreducer=(state=initialstate,action)=>{
                 return{
                   imgurl:left.concat(right)
                 }
+                case DATA_ITEM:
+                    return{
+                        Data:action.arr
+                    }
         default: return state
     }
 }

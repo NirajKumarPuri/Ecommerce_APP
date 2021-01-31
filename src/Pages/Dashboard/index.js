@@ -5,6 +5,7 @@ import Fatch from "./Fatchdata/index";
 import Login from "../Login/index";
 import Signup from "../Signup/index";
 import Landing from "./Landing/index";
+import Footer from "./Footer/index";
 const Dashboard=()=>{
     const[data,setdata]=useState(false);
     const[item,setitem]=useState(false);
@@ -40,6 +41,7 @@ const Dashboard=()=>{
             <Login Data={data} onclick={heandleclick}  />
             <Signup Data={val} onclick={signupclick} button={heandleclick}/>
             <Fatch/>
+            <Footer/>
             </div>
         )
     

@@ -3,7 +3,47 @@ import styles from "./login.module.css";
 class Login extends React.Component{
   constructor(props){
     super(props);
+    this.state={
+      email:'',
+      password:'',
+      Token: window.sessionStorage.getItem('token') ||'',
+
+    }
   }
+  Tokencheack=()=>{
+    
+    if(this.state.Token){
+      console.log("token",this.state.Token)
+      this.props. onclick()
+    }
+  }
+  handlechange=(e)=>{
+    this.setState({
+      [e.target.name]:e.target.value
+    })
+  }
+  handleclick=()=>{
+    fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCNswzrzHE198RO5e4jlCrHZtXT-Qr536U',{
+      method:'POST',
+      headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+        returnSecureToken: true
+
+    })
+    
+  }).then((res)=> {
+    return res.json()
+  }).then((result)=>{
+    console.log(result)
+    if(!result.error){
+      window.sessionStorage.setItem('token',result.idToken)
+    }
+  })
+}
   
   render(){
         return(
@@ -22,13 +62,13 @@ class Login extends React.Component{
            </div>
            <div className={styles.content2}>
              <div className={styles.emailbox}>
-              <input className={styles.email} type='text' placeholder="Enter Email/Mobile number"autoFocus/>
+              <input onChange={this.handlechange} value={this.state.email} name="email" className={styles.email} type='text' placeholder="Enter Email/Mobile number"autoFocus/>
              </div>
              <div className={styles.passwordbox}>
-              <input className={styles.password} type="number" placeholder="Enter password"/>
+              <input onChange={this.handlechange} className={styles.password} name="password" value={this.state.password} type="password" placeholder="Enter password"/>
              </div>
              <div className={styles.buttonbox}>
-             <button className={styles.button}>Login</button>
+             <button onClick={()=> { this.handleclick() ; this.Tokencheack();}} className={styles.button}>Login</button>
              </div>
            </div>
            <div className={styles.crosbox}>

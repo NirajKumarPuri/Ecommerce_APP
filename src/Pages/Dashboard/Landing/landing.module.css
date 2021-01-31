@@ -9,7 +9,7 @@
 .content{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     position: absolute;
     z-index: 12;
     left: 0px;
@@ -17,8 +17,10 @@
     top:100px;
 
 }
+.iconbox{
+    width: 10%;
+}
 .img{
     width: 100%;
     height: 100%;
-    transition: infinite ease-in-out ;
 }

@@ -26,7 +26,6 @@ const Navbar=({Val,call})=>{
                 </div>
 
             </div>
-            <hr className={styles.line} />
             <div className={styles.logoutbox}>
              <Icon name='sign-out'onclick={handleclick} size="lg" color='skyblue'/>
             </div>

@@ -49,8 +49,12 @@ class Landing extends React.Component{
         return(
             <div className={styles.container}>
                 <div className={styles.content}>
+                <div className={styles.iconbox}>
                 <Icon name="angle-left" size='4x' color='gray'onclick={this. handleclick}/>
+                </div>
+                <div className={styles.iconbox}>
                 <Icon name="angle-right" size='4x' color='gray' onclick={this. handleclick}/>
+                </div>
                 </div>
             <img className={styles.img} src={arr[this.state.currentindex].imgurl}/>
             </div>

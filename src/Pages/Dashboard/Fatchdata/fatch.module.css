@@ -12,6 +12,6 @@
 @media(min-width:1024px){
     .content{
         width: 12%;
-        margin-left: 20px;
+        /* margin-left: 20px; */
     }
 }
