@@ -6,10 +6,13 @@ import styles from "./fatch.module.css";
 const Fatch=(props)=>{
     const[data,setdata]=useState([])
     useEffect(()=>{
-       fetch('https://fakestoreapi.com/products')
-    .then(res=>res.json())
-    .then(json=>setdata( props.Data? props.Data:json) )
+       fetch('https://fakestoreapi.com/products/').then(res=>res.json())
+    .then(json=>setdata(json) ).catch((data)=>console.log('Niraj',data))
 },[])
+
+// useEffect(()=>{
+//     setdata((prevData)=>props.Data ? props.Data : prevData)
+// },[props.Data])
     return(
         <div className={styles.container}>
             {console.log('niraj',data)}
